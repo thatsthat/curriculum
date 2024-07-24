@@ -50,19 +50,21 @@ The [Letter Opener gem (see docs)](https://github.com/ryanb/letter_opener), put 
 
 ### Email wisdom
 
-* Email is SLOW! It can take 1-2 seconds per email to send, so don't make your main application do it when you're serving a whole bunch of them because then anyone trying to access it will be shut out.
-* Make sure you use full URLs in any links in your mailer (so `_url` not `_path` helper methods), since the user will be opening the email and clicking the link at an external source.  In your `config/environments/production.rb` file you'll want to make sure to specify your website's host name using something like `config.action_mailer.default_url_options = { :host => 'yourapp.com' }`.  If it's not set, you may get an error message about your host or your links may look funny.
-* The `#deliver!` method will throw an error on delivery failure whereas `#deliver` will return false (failing silently).
-* When styling your email HTML, you won't have access to any stylesheets so you'll need to do all the styling either inline or using `<style>` tags.
-* Attaching images to emails (like using logos in the HTML version) can be a bit of a pain.  See the reading.
+- Email is SLOW! It can take 1-2 seconds per email to send, so don't make your main application do it when you're serving a whole bunch of them because then anyone trying to access it will be shut out.
+- Make sure you use full URLs in any links in your mailer (so `_url` not `_path` helper methods), since the user will be opening the email and clicking the link at an external source.  In your `config/environments/production.rb` file you'll want to make sure to specify your website's host name using something like `config.action_mailer.default_url_options = { :host => 'yourapp.com' }`.  If it's not set, you may get an error message about your host or your links may look funny.
+- The `#deliver!` method will throw an error on delivery failure whereas `#deliver` will return false (failing silently).
+- When styling your email HTML, you won't have access to any stylesheets so you'll need to do all the styling either inline or using `<style>` tags.
+- Attaching images to emails (like using logos in the HTML version) can be a bit of a pain.  See the reading.
 
 ### Assignment
 
 <div class="lesson-content__panel" markdown="1">
+
   1. Read sections 1 and 2 of the [Rails Guide on ActionMailer](http://guides.rubyonrails.org/action_mailer_basics.html).
-  2. Read [sections 3 and 4](https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-callbacks) to learn about callbacks and helpers.
-  3. Read [section 5.2](https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail), which covers sending mail with your Gmail.
-  4. Skim [sections 6 and 7](https://guides.rubyonrails.org/action_mailer_basics.html#mailer-testing) on testing and intercepting emails.
+  1. Read [sections 3 and 4](https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-callbacks) to learn about callbacks and helpers.
+  1. Read [section 5.2](https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail), which covers sending mail with your Gmail.
+  1. Skim [sections 6 and 7](https://guides.rubyonrails.org/action_mailer_basics.html#mailer-testing) on testing and intercepting emails.
+
 </div>
 
 ### Conclusion
@@ -71,12 +73,12 @@ Sending email is just a slightly different way of using the same patterns you've
 
 ### Knowledge check
 
-* <a class='knowledge-check-link' href='#brief-overview'>How do you create a new mailer from the command line?</a>
-* <a class='knowledge-check-link' href='#brief-overview'>Where do you store the actual email in your application?</a>
-* <a class='knowledge-check-link' href='#brief-overview'>How do you send an email directly from the Rails console?</a>
-* <a class='knowledge-check-link' href='#callbacks'>How do you use callbacks with mailers?</a>
-* <a class='knowledge-check-link' href='#email-wisdom'>How do you write links in mailer views?</a>
-* <a class='knowledge-check-link' href='#email-wisdom'>How do you style an HTML email?</a>
+- [How do you create a new mailer from the command line?](#brief-overview)
+- [Where do you store the actual email in your application?](#brief-overview)
+- [How do you send an email directly from the Rails console?](#brief-overview)
+- [How do you use callbacks with mailers?](#callbacks)
+- [How do you write links in mailer views?](#email-wisdom)
+- [How do you style an HTML email?](#email-wisdom)
 
 ### Additional resources
 
